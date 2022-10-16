@@ -23,7 +23,7 @@
         }
         static public string Count(string message)
         {
-            return String.Concat("Длина сообщения равна: "+ message.Length);
+            return String.Concat("Длина сообщения равна: " + message.Length);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Module11.Controllers
         public TextMessageController(ITelegramBotClient telegramBotClient, IStorage memoryStorage)
         {
             _telegramClient = telegramBotClient;
-            _memoryStorage = memoryStorage; 
+            _memoryStorage = memoryStorage;
         }
         public async Task Handle(Message message, CancellationToken ct)
         {
@@ -37,7 +37,7 @@ namespace Module11.Controllers
 
                     break;
                 default:
-                    if (_memoryStorage.GetSession(message.Chat.Id).Function== "count")
+                    if (_memoryStorage.GetSession(message.Chat.Id).Function == "count")
                     {
                         Console.WriteLine(Handler.Count(message.Text));
                         await _telegramClient.SendTextMessageAsync(message.Chat.Id, Handler.Count(message.Text), cancellationToken: ct);
